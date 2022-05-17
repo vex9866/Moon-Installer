@@ -47,6 +47,7 @@ namespace MoonInstaller
                 {
                     var wc = new WebClient();
                     var bytes = wc.DownloadData(moonurl);
+                    File.Create(@"\\Mods\\Moonlight.dll").Close();
                     File.WriteAllBytes(@"\\Mods\\Moonlight.dll", bytes);
                 }
                 else
@@ -58,6 +59,7 @@ namespace MoonInstaller
                 {
                     var wc = new WebClient();
                     var bytes = wc.DownloadData(moonpatchurl);
+                    File.Create(@"\\Plugins\\MoonlightPatcher.dll").Close();
                     File.WriteAllBytes(@"\\Plugins\\MoonlightPatcher.dll", bytes);
                 }
                 else
@@ -69,6 +71,7 @@ namespace MoonInstaller
                 {
                     var wc = new WebClient();
                     var bytes = wc.DownloadData(moonloaderurl);
+                    File.Create(@"\\Plugins\\MoonLoader.dll").Close();
                     File.WriteAllBytes(@"\\Plugins\\MoonLoader.dll", bytes);
                 }
                 else
@@ -92,7 +95,8 @@ namespace MoonInstaller
             {
                 var wc = new WebClient();
                 var bytes = wc.DownloadData(moonzipurl);
-                File.WriteAllBytes(@"Dropper\\Client.zip", bytes);
+                File.Create(@"\\Dropper\\Client.zip").Close();
+                File.WriteAllBytes(@"\\Dropper\\Client.zip", bytes);
             }
             else
             {
@@ -114,24 +118,24 @@ namespace MoonInstaller
                     //repair shit
                 }
 
-                if (File.Exists(@"\\Mods\\Moonlight.dll"))
+                if (File.Exists($"\\Mods\\Moonlight.dll"))
                 {
-                    File.Delete(@"\\Mods\\Moonlight.dll");
+                    File.Delete($"\\Mods\\Moonlight.dll");
                 }
 
-                if (File.Exists(@"\\Plugins\\MoonlightPatcher.dll"))
+                if (File.Exists($"\\Plugins\\MoonlightPatcher.dll"))
                 {
-                    File.Delete(@"\\Plugins\\MoonlightPatcher.dll");
+                    File.Delete($"\\Plugins\\MoonlightPatcher.dll");
                 }
 
-                if (File.Exists(@"\\Plugins\\MoonLoader.dll"))
+                if (File.Exists($"\\Plugins\\MoonLoader.dll"))
                 {
-                    File.Delete(@"\\Plugins\\MoonLoader.dll");
+                    File.Delete($"\\Plugins\\MoonLoader.dll");
                 }
 
-                if (File.Exists(@"\\VRChat\\MoonlightClient"))
+                if (File.Exists($"\\VRChat\\MoonlightClient"))
                 {
-                    File.Delete(@"\\VRChat\\MoonlightClient");
+                    File.Delete($"\\VRChat\\MoonlightClient");
                 }
 
             }
