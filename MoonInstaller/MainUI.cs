@@ -151,9 +151,9 @@ namespace MoonInstaller
                         File.Delete($"{folderlocation}\\Plugins\\MoonLoader.dll");
                     }
 
-                    if (File.Exists($"{folderlocation}\\VRChat\\MoonlightClient"))
+                    if (Directory.Exists($"{folderlocation}\\VRChat\\MoonlightClient"))
                     {
-                        File.Delete($"{folderlocation}\\VRChat\\MoonlightClient");
+                        Directory.Delete($"{folderlocation}\\VRChat\\MoonlightClient");
                     }
                 }
             }
