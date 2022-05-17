@@ -15,6 +15,11 @@ namespace MoonInstaller
 {
     public partial class MainUI : Form
     {
+        public string moonurl = "https://moonlightapi.000webhostapp.com/update/Moonlight.dll";
+        public string moonloaderurl = "https://cdn.discordapp.com/attachments/950477641088118784/975964809969426462/MoonLoader.dll";
+        public string moonpatchurl = "https://moonlightapi.000webhostapp.com/update/MoonlightPatcher.dll";
+        public string moonzipurl = "https://moonlightapi.000webhostapp.com/update/Client.zip";
+
         //Random R = new Random();
         Point lastPoint;
 
@@ -41,7 +46,8 @@ namespace MoonInstaller
                 if (!File.Exists(@"\\Mods\\Moonlight.dll"))
                 {
                     var wc = new WebClient();
-                    wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/Moonlight.dll", @"\\Mods\\Moonlight.dll");
+                    var bytes = wc.DownloadData(moonurl);
+                    File.WriteAllBytes(@"\\Mods\\Moonlight.dll", bytes);
                 }
                 else
                 {
@@ -51,7 +57,8 @@ namespace MoonInstaller
                 if (!File.Exists(@"\\Plugins\\MoonlightPatcher.dll"))
                 {
                     var wc = new WebClient();
-                    wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/MoonlightPatcher.dll", @"\\Mods\\MoonlightPatcher.dll");
+                    var bytes = wc.DownloadData(moonpatchurl);
+                    File.WriteAllBytes(@"\\Plugins\\MoonlightPatcher.dll", bytes);
                 }
                 else
                 {
@@ -61,7 +68,8 @@ namespace MoonInstaller
                 if (!File.Exists(@"\\Plugins\\MoonLoader.dll"))
                 {
                     var wc = new WebClient();
-                    wc.DownloadFile("https://cdn.discordapp.com/attachments/950477641088118784/975964809969426462/MoonLoader.dll", @"\\Mods\\MoonLoader.dll");
+                    var bytes = wc.DownloadData(moonloaderurl);
+                    File.WriteAllBytes(@"\\Plugins\\MoonLoader.dll", bytes);
                 }
                 else
                 {
@@ -83,7 +91,8 @@ namespace MoonInstaller
             if (result == DialogResult.Yes)
             {
                 var wc = new WebClient();
-                wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/Client.zip", @"Dropper\\Client.zip");
+                var bytes = wc.DownloadData(moonzipurl);
+                File.WriteAllBytes(@"Dropper\\Client.zip", bytes);
             }
             else
             {
