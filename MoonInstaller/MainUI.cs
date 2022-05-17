@@ -150,11 +150,12 @@ namespace MoonInstaller
                     {
                         File.Delete($"{folderlocation}\\Plugins\\MoonLoader.dll");
                     }
-
+                    /*
                     if (Directory.Exists($"{folderlocation}\\MoonlightClient"))
                     {
                         Directory.Delete($"{folderlocation}\\MoonlightClient");
                     }
+                    */
                 }
             }
             else
