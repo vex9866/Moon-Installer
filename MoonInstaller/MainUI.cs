@@ -9,7 +9,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MelonLoader;
 using System.Diagnostics;
 
 namespace MoonInstaller
@@ -39,30 +38,30 @@ namespace MoonInstaller
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                if (!File.Exists($"{MelonUtils.GameDirectory}\\Mods\\Moonlight.dll"))
+                if (!File.Exists(@"\\Mods\\Moonlight.dll"))
                 {
                     var wc = new WebClient();
-                    wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/Moonlight.dll", $"{MelonUtils.GameDirectory}\\Mods\\Moonlight.dll");
+                    wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/Moonlight.dll", @"\\Mods\\Moonlight.dll");
                 }
                 else
                 {
                     MessageBox.Show("Moonlight already exists!","MOON INSTALLER");
                 }
 
-                if (!File.Exists($"{MelonUtils.GameDirectory}\\Plugins\\MoonlightPatcher.dll"))
+                if (!File.Exists(@"\\Plugins\\MoonlightPatcher.dll"))
                 {
                     var wc = new WebClient();
-                    wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/MoonlightPatcher.dll", $"{MelonUtils.GameDirectory}\\Mods\\Moonlight.dll");
+                    wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/MoonlightPatcher.dll", @"\\Mods\\Moonlight.dll");
                 }
                 else
                 {
                     MessageBox.Show("Moonlight's patcher already exists!", "MOON INSTALLER");
                 }
 
-                if (!File.Exists($"{MelonUtils.GameDirectory}\\Plugins\\MoonLoader.dll"))
+                if (!File.Exists(@"\\Plugins\\MoonLoader.dll"))
                 {
                     var wc = new WebClient();
-                    wc.DownloadFile("https://cdn.discordapp.com/attachments/950477641088118784/975964809969426462/MoonLoader.dll", $"{MelonUtils.GameDirectory}\\Mods\\Moonlight.dll");
+                    wc.DownloadFile("https://cdn.discordapp.com/attachments/950477641088118784/975964809969426462/MoonLoader.dll", @"\\Mods\\Moonlight.dll");
                 }
                 else
                 {
@@ -84,7 +83,7 @@ namespace MoonInstaller
             if (result == DialogResult.Yes)
             {
                 var wc = new WebClient();
-                wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/Client.zip", $"Dropper\\Client.zip");
+                wc.DownloadFile("https://moonlightapi.000webhostapp.com/update/Client.zip", @"Dropper\\Client.zip");
             }
             else
             {
@@ -106,19 +105,19 @@ namespace MoonInstaller
                     //repair shit
                 }
 
-                if (File.Exists($"{MelonUtils.GameDirectory}\\Mods\\Moonlight.dll"))
+                if (File.Exists(@"\\Mods\\Moonlight.dll"))
                 {
-                    File.Delete($"{MelonUtils.GameDirectory}\\Plugins\\Moonlight.dll");
+                    File.Delete(@"\\Plugins\\Moonlight.dll");
                 }
 
-                if (File.Exists($"{MelonUtils.GameDirectory}\\Plugins\\MoonlightPatcher.dll"))
+                if (File.Exists(@"\\Plugins\\MoonlightPatcher.dll"))
                 {
-                    File.Delete($"{MelonUtils.GameDirectory}\\Plugins\\MoonlightPatcher.dll");
+                    File.Delete(@"\\Plugins\\MoonlightPatcher.dll");
                 }
 
-                if (File.Exists($"{MelonUtils.GameDirectory}\\Plugins\\MoonLoader.dll"))
+                if (File.Exists(@"\\Plugins\\MoonLoader.dll"))
                 {
-                    File.Delete($"{MelonUtils.GameDirectory}\\Plugins\\MoonLoader.dll");
+                    File.Delete(@"\\Plugins\\MoonLoader.dll");
                 }
 
             }
