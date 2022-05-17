@@ -157,5 +157,16 @@ namespace MoonInstaller
                 this.Top += e.Y - lastPoint.Y;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Process.GetCurrentProcess().Kill();
+            Application.Exit();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
