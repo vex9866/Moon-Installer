@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace MoonInstaller
 {
@@ -210,7 +211,12 @@ namespace MoonInstaller
 
         private void LocationSelect_Click(object sender, EventArgs e)
         {
-
+            CommonOpenFileDialog dlg = new CommonOpenFileDialog();
+            dlg.IsFolderPicker = true;
+            if (dlg.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                DirectBox.Text = dlg.FileName;
+            }
         }
     }
 }

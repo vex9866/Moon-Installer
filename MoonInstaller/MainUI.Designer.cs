@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.ColorTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LocationSelect = new System.Windows.Forms.Button();
+            this.DirectBox = new System.Windows.Forms.TextBox();
+            this.VRCDirLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,9 +42,6 @@
             this.RepairButton = new System.Windows.Forms.Button();
             this.ZIPButton = new System.Windows.Forms.Button();
             this.InstallButton = new System.Windows.Forms.Button();
-            this.VRCDirLabel = new System.Windows.Forms.Label();
-            this.DirectBox = new System.Windows.Forms.TextBox();
-            this.LocationSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,43 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseMove);
+            // 
+            // LocationSelect
+            // 
+            this.LocationSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LocationSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationSelect.ForeColor = System.Drawing.Color.BlueViolet;
+            this.LocationSelect.Location = new System.Drawing.Point(578, 347);
+            this.LocationSelect.Name = "LocationSelect";
+            this.LocationSelect.Size = new System.Drawing.Size(43, 20);
+            this.LocationSelect.TabIndex = 10;
+            this.LocationSelect.Text = "...";
+            this.LocationSelect.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LocationSelect.UseVisualStyleBackColor = true;
+            this.LocationSelect.Click += new System.EventHandler(this.LocationSelect_Click);
+            // 
+            // DirectBox
+            // 
+            this.DirectBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.DirectBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DirectBox.ForeColor = System.Drawing.Color.BlueViolet;
+            this.DirectBox.Location = new System.Drawing.Point(135, 347);
+            this.DirectBox.Name = "DirectBox";
+            this.DirectBox.Size = new System.Drawing.Size(437, 20);
+            this.DirectBox.TabIndex = 9;
+            this.DirectBox.Text = "Select VRC Folder (Example: C:\\SteamLibrary\\steamapps\\common\\VRChat)";
+            // 
+            // VRCDirLabel
+            // 
+            this.VRCDirLabel.AutoSize = true;
+            this.VRCDirLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VRCDirLabel.ForeColor = System.Drawing.Color.BlueViolet;
+            this.VRCDirLabel.Location = new System.Drawing.Point(9, 340);
+            this.VRCDirLabel.Name = "VRCDirLabel";
+            this.VRCDirLabel.Size = new System.Drawing.Size(120, 30);
+            this.VRCDirLabel.TabIndex = 8;
+            this.VRCDirLabel.Text = "VRChat Dir:";
+            this.VRCDirLabel.Click += new System.EventHandler(this.VRCDirLabel_Click);
             // 
             // label2
             // 
@@ -159,43 +196,6 @@
             this.InstallButton.Text = "INSTALL";
             this.InstallButton.UseVisualStyleBackColor = true;
             this.InstallButton.Click += new System.EventHandler(this.InstallButton_Click);
-            // 
-            // VRCDirLabel
-            // 
-            this.VRCDirLabel.AutoSize = true;
-            this.VRCDirLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VRCDirLabel.ForeColor = System.Drawing.Color.BlueViolet;
-            this.VRCDirLabel.Location = new System.Drawing.Point(9, 340);
-            this.VRCDirLabel.Name = "VRCDirLabel";
-            this.VRCDirLabel.Size = new System.Drawing.Size(120, 30);
-            this.VRCDirLabel.TabIndex = 8;
-            this.VRCDirLabel.Text = "VRChat Dir:";
-            this.VRCDirLabel.Click += new System.EventHandler(this.VRCDirLabel_Click);
-            // 
-            // DirectBox
-            // 
-            this.DirectBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.DirectBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DirectBox.ForeColor = System.Drawing.Color.BlueViolet;
-            this.DirectBox.Location = new System.Drawing.Point(135, 347);
-            this.DirectBox.Name = "DirectBox";
-            this.DirectBox.Size = new System.Drawing.Size(338, 20);
-            this.DirectBox.TabIndex = 9;
-            this.DirectBox.Text = "Select Your game folder!";
-            // 
-            // LocationSelect
-            // 
-            this.LocationSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LocationSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocationSelect.ForeColor = System.Drawing.Color.BlueViolet;
-            this.LocationSelect.Location = new System.Drawing.Point(479, 347);
-            this.LocationSelect.Name = "LocationSelect";
-            this.LocationSelect.Size = new System.Drawing.Size(43, 20);
-            this.LocationSelect.TabIndex = 10;
-            this.LocationSelect.Text = "...";
-            this.LocationSelect.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LocationSelect.UseVisualStyleBackColor = true;
-            this.LocationSelect.Click += new System.EventHandler(this.LocationSelect_Click);
             // 
             // MainUI
             // 
