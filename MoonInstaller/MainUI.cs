@@ -37,46 +37,55 @@ namespace MoonInstaller
 
         private void InstallButton_Click(object sender, EventArgs e)
         {
+            string folderlocation = DirectBox.Text;
+
             string message = "Do you want to Install the client?";
             string title = "MOON INSTALLER";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                if (!File.Exists(@"\\Mods\\Moonlight.dll"))
+                if(folderlocation == "")
                 {
-                    var wc = new WebClient();
-                    var bytes = wc.DownloadData(moonurl);
-                    File.Create(@"\\Mods\\Moonlight.dll").Close();
-                    File.WriteAllBytes(@"\\Mods\\Moonlight.dll", bytes);
+                    MessageBox.Show("Please select your vrchat folder!", "MOON INSTALLER");
                 }
                 else
                 {
-                    MessageBox.Show("Moonlight already exists!","MOON INSTALLER");
-                }
+                    if (!File.Exists($"{folderlocation}\\Mods\\Moonlight.dll"))
+                    {
+                        var wc = new WebClient();
+                        var bytes = wc.DownloadData(moonurl);
+                        File.Create($"{folderlocation}\\Mods\\Moonlight.dll").Close();
+                        File.WriteAllBytes($"{folderlocation}\\Mods\\Moonlight.dll", bytes);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Moonlight already exists!", "MOON INSTALLER");
+                    }
 
-                if (!File.Exists(@"\\Plugins\\MoonlightPatcher.dll"))
-                {
-                    var wc = new WebClient();
-                    var bytes = wc.DownloadData(moonpatchurl);
-                    File.Create(@"\\Plugins\\MoonlightPatcher.dll").Close();
-                    File.WriteAllBytes(@"\\Plugins\\MoonlightPatcher.dll", bytes);
-                }
-                else
-                {
-                    MessageBox.Show("Moonlight's patcher already exists!", "MOON INSTALLER");
-                }
+                    if (!File.Exists($"{folderlocation}\\Plugins\\MoonlightPatcher.dll"))
+                    {
+                        var wc = new WebClient();
+                        var bytes = wc.DownloadData(moonpatchurl);
+                        File.Create($"{folderlocation}\\Plugins\\MoonlightPatcher.dll").Close();
+                        File.WriteAllBytes($"{folderlocation}\\Plugins\\MoonlightPatcher.dll", bytes);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Moonlight's patcher already exists!", "MOON INSTALLER");
+                    }
 
-                if (!File.Exists(@"\\Plugins\\MoonLoader.dll"))
-                {
-                    var wc = new WebClient();
-                    var bytes = wc.DownloadData(moonloaderurl);
-                    File.Create(@"\\Plugins\\MoonLoader.dll").Close();
-                    File.WriteAllBytes(@"\\Plugins\\MoonLoader.dll", bytes);
-                }
-                else
-                {
-                    MessageBox.Show("Moonlight's patcher already exists!", "MOON INSTALLER");
+                    if (!File.Exists($"{folderlocation}\\Plugins\\MoonLoader.dll"))
+                    {
+                        var wc = new WebClient();
+                        var bytes = wc.DownloadData(moonloaderurl);
+                        File.Create($"{folderlocation}\\Plugins\\MoonLoader.dll").Close();
+                        File.WriteAllBytes($"{folderlocation}\\Plugins\\MoonLoader.dll", bytes);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Moonlight's patcher already exists!", "MOON INSTALLER");
+                    }
                 }
             }
             else
@@ -106,6 +115,8 @@ namespace MoonInstaller
 
         private void RepairButton_Click(object sender, EventArgs e)
         {
+            string folderlocation = DirectBox.Text;
+
             bool repair = false;
             string message = "This process will proceed to check if Moonlight's DLLs have been changed / altered in anyway and will try its best to fix it. Do you wish to continue?";
             string title = "MOON INSTALLER";
@@ -113,31 +124,37 @@ namespace MoonInstaller
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                if(repair == true)
+                if (folderlocation == "")
                 {
-                    //repair shit
+                    MessageBox.Show("Please select your vrchat folder!", "MOON INSTALLER");
                 }
-
-                if (File.Exists($"\\Mods\\Moonlight.dll"))
+                else
                 {
-                    File.Delete($"\\Mods\\Moonlight.dll");
-                }
+                    if (repair == true)
+                    {
+                        //repair shit
+                    }
 
-                if (File.Exists($"\\Plugins\\MoonlightPatcher.dll"))
-                {
-                    File.Delete($"\\Plugins\\MoonlightPatcher.dll");
-                }
+                    if (File.Exists($"{folderlocation}\\Mods\\Moonlight.dll"))
+                    {
+                        File.Delete($"{folderlocation}\\Mods\\Moonlight.dll");
+                    }
 
-                if (File.Exists($"\\Plugins\\MoonLoader.dll"))
-                {
-                    File.Delete($"\\Plugins\\MoonLoader.dll");
-                }
+                    if (File.Exists($"{folderlocation}\\Plugins\\MoonlightPatcher.dll"))
+                    {
+                        File.Delete($"{folderlocation}\\Plugins\\MoonlightPatcher.dll");
+                    }
 
-                if (File.Exists($"\\VRChat\\MoonlightClient"))
-                {
-                    File.Delete($"\\VRChat\\MoonlightClient");
-                }
+                    if (File.Exists($"{folderlocation}\\Plugins\\MoonLoader.dll"))
+                    {
+                        File.Delete($"{folderlocation}\\Plugins\\MoonLoader.dll");
+                    }
 
+                    if (File.Exists($"{folderlocation}\\VRChat\\MoonlightClient"))
+                    {
+                        File.Delete($"{folderlocation}\\VRChat\\MoonlightClient");
+                    }
+                }
             }
             else
             {
@@ -184,6 +201,16 @@ namespace MoonInstaller
         private void label2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void VRCDirLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LocationSelect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

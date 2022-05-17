@@ -32,13 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.ColorTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DiscordButton = new System.Windows.Forms.Button();
             this.RepairButton = new System.Windows.Forms.Button();
             this.ZIPButton = new System.Windows.Forms.Button();
             this.InstallButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.VRCDirLabel = new System.Windows.Forms.Label();
+            this.DirectBox = new System.Windows.Forms.TextBox();
+            this.LocationSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +55,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.panel1.Controls.Add(this.LocationSelect);
+            this.panel1.Controls.Add(this.DirectBox);
+            this.panel1.Controls.Add(this.VRCDirLabel);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -65,6 +71,30 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.BlueViolet;
+            this.label2.Location = new System.Drawing.Point(733, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "-";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.BlueViolet;
+            this.label1.Location = new System.Drawing.Point(759, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -130,29 +160,42 @@
             this.InstallButton.UseVisualStyleBackColor = true;
             this.InstallButton.Click += new System.EventHandler(this.InstallButton_Click);
             // 
-            // label1
+            // VRCDirLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label1.Location = new System.Drawing.Point(759, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.VRCDirLabel.AutoSize = true;
+            this.VRCDirLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VRCDirLabel.ForeColor = System.Drawing.Color.BlueViolet;
+            this.VRCDirLabel.Location = new System.Drawing.Point(9, 340);
+            this.VRCDirLabel.Name = "VRCDirLabel";
+            this.VRCDirLabel.Size = new System.Drawing.Size(120, 30);
+            this.VRCDirLabel.TabIndex = 8;
+            this.VRCDirLabel.Text = "VRChat Dir:";
+            this.VRCDirLabel.Click += new System.EventHandler(this.VRCDirLabel_Click);
             // 
-            // label2
+            // DirectBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label2.Location = new System.Drawing.Point(733, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "-";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.DirectBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.DirectBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DirectBox.ForeColor = System.Drawing.Color.BlueViolet;
+            this.DirectBox.Location = new System.Drawing.Point(135, 347);
+            this.DirectBox.Name = "DirectBox";
+            this.DirectBox.Size = new System.Drawing.Size(338, 20);
+            this.DirectBox.TabIndex = 9;
+            this.DirectBox.Text = "Select Your game folder!";
+            // 
+            // LocationSelect
+            // 
+            this.LocationSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LocationSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationSelect.ForeColor = System.Drawing.Color.BlueViolet;
+            this.LocationSelect.Location = new System.Drawing.Point(479, 347);
+            this.LocationSelect.Name = "LocationSelect";
+            this.LocationSelect.Size = new System.Drawing.Size(43, 20);
+            this.LocationSelect.TabIndex = 10;
+            this.LocationSelect.Text = "...";
+            this.LocationSelect.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LocationSelect.UseVisualStyleBackColor = true;
+            this.LocationSelect.Click += new System.EventHandler(this.LocationSelect_Click);
             // 
             // MainUI
             // 
@@ -188,6 +231,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button LocationSelect;
+        private System.Windows.Forms.TextBox DirectBox;
+        private System.Windows.Forms.Label VRCDirLabel;
     }
 }
 
