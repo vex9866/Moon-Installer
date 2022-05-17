@@ -17,6 +17,7 @@ namespace MoonInstaller
     public partial class MainUI : Form
     {
         //Random R = new Random();
+        Point lastPoint;
 
         public MainUI()
         {
@@ -140,6 +141,20 @@ namespace MoonInstaller
             else
             {
                 //Nothing
+            }
+        }
+
+        private void MainUI_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void MainUI_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
             }
         }
     }

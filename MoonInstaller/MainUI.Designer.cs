@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.ColorTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.InstallButton = new System.Windows.Forms.Button();
-            this.ZIPButton = new System.Windows.Forms.Button();
-            this.RepairButton = new System.Windows.Forms.Button();
-            this.DiscordButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.DiscordButton = new System.Windows.Forms.Button();
+            this.RepairButton = new System.Windows.Forms.Button();
+            this.ZIPButton = new System.Windows.Forms.Button();
+            this.InstallButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -59,45 +59,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(791, 440);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseMove);
             // 
-            // InstallButton
+            // pictureBox2
             // 
-            this.InstallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InstallButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InstallButton.ForeColor = System.Drawing.Color.BlueViolet;
-            this.InstallButton.Location = new System.Drawing.Point(9, 373);
-            this.InstallButton.Name = "InstallButton";
-            this.InstallButton.Size = new System.Drawing.Size(207, 59);
-            this.InstallButton.TabIndex = 0;
-            this.InstallButton.Text = "INSTALL";
-            this.InstallButton.UseVisualStyleBackColor = true;
-            this.InstallButton.Click += new System.EventHandler(this.InstallButton_Click);
-            // 
-            // ZIPButton
-            // 
-            this.ZIPButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ZIPButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZIPButton.ForeColor = System.Drawing.Color.BlueViolet;
-            this.ZIPButton.Location = new System.Drawing.Point(222, 373);
-            this.ZIPButton.Name = "ZIPButton";
-            this.ZIPButton.Size = new System.Drawing.Size(207, 59);
-            this.ZIPButton.TabIndex = 1;
-            this.ZIPButton.Text = "ZIP";
-            this.ZIPButton.UseVisualStyleBackColor = true;
-            this.ZIPButton.Click += new System.EventHandler(this.ZIPButton_Click);
-            // 
-            // RepairButton
-            // 
-            this.RepairButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RepairButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RepairButton.ForeColor = System.Drawing.Color.BlueViolet;
-            this.RepairButton.Location = new System.Drawing.Point(435, 373);
-            this.RepairButton.Name = "RepairButton";
-            this.RepairButton.Size = new System.Drawing.Size(201, 59);
-            this.RepairButton.TabIndex = 2;
-            this.RepairButton.Text = "REPAIR / UNINSTALL";
-            this.RepairButton.UseVisualStyleBackColor = true;
-            this.RepairButton.Click += new System.EventHandler(this.RepairButton_Click);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(9, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(773, 367);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseDown);
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseMove);
             // 
             // DiscordButton
             // 
@@ -112,15 +87,44 @@
             this.DiscordButton.UseVisualStyleBackColor = true;
             this.DiscordButton.Click += new System.EventHandler(this.DiscordButton_Click);
             // 
-            // pictureBox2
+            // RepairButton
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(773, 367);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.RepairButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RepairButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepairButton.ForeColor = System.Drawing.Color.BlueViolet;
+            this.RepairButton.Location = new System.Drawing.Point(435, 373);
+            this.RepairButton.Name = "RepairButton";
+            this.RepairButton.Size = new System.Drawing.Size(201, 59);
+            this.RepairButton.TabIndex = 2;
+            this.RepairButton.Text = "REPAIR / UNINSTALL";
+            this.RepairButton.UseVisualStyleBackColor = true;
+            this.RepairButton.Click += new System.EventHandler(this.RepairButton_Click);
+            // 
+            // ZIPButton
+            // 
+            this.ZIPButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ZIPButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZIPButton.ForeColor = System.Drawing.Color.BlueViolet;
+            this.ZIPButton.Location = new System.Drawing.Point(222, 373);
+            this.ZIPButton.Name = "ZIPButton";
+            this.ZIPButton.Size = new System.Drawing.Size(207, 59);
+            this.ZIPButton.TabIndex = 1;
+            this.ZIPButton.Text = "ZIP";
+            this.ZIPButton.UseVisualStyleBackColor = true;
+            this.ZIPButton.Click += new System.EventHandler(this.ZIPButton_Click);
+            // 
+            // InstallButton
+            // 
+            this.InstallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InstallButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InstallButton.ForeColor = System.Drawing.Color.BlueViolet;
+            this.InstallButton.Location = new System.Drawing.Point(9, 373);
+            this.InstallButton.Name = "InstallButton";
+            this.InstallButton.Size = new System.Drawing.Size(207, 59);
+            this.InstallButton.TabIndex = 0;
+            this.InstallButton.Text = "INSTALL";
+            this.InstallButton.UseVisualStyleBackColor = true;
+            this.InstallButton.Click += new System.EventHandler(this.InstallButton_Click);
             // 
             // MainUI
             // 
@@ -136,6 +140,8 @@
             this.Name = "MainUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moonlight Installer";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainUI_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
